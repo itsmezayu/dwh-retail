@@ -17,4 +17,5 @@ Route::resource("pelanggan", PelangganController::class);
 Route::resource("penjualan", PenjualanController::class);
 Route::get("waktu", [WaktuController::class, "index"])->name("waktu.index");
 Route::post("waktu", [WaktuController::class, "store"])->name("waktu.store");
+Route::get("waktu/create", [WaktuController::class, "create"])->name("waktu.create");
 

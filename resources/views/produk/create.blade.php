@@ -3,32 +3,32 @@
 @section('title', 'Tambah Produk')
 
 @section('content')
-<div class="bg-white p-6 rounded shadow md:w-1/2">
+<div class="bg-white p-5 rounded shadow">
     <form action="{{ route('produk.store') }}" method="POST">
         @csrf
 
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2">Kode Produk</label>
-            <input type="text" name="kode_produk" value="{{ old('kode_produk') }}" class="border rounded w-full py-2 px-3 text-gray-700 bg-gray-50 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+        <div class="mb-5">
+            <label class="block text-black font-bold mb-2">Kode Produk</label>
+            <input type="text" name="kode_produk" value="{{ old('kode_produk') }}" class="border rounded w-full py-2 px-3 text-black bg-gray-50 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" required>
         </div>
 
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2">Nama Produk</label>
-            <input type="text" name="nama_produk" value="{{ old('nama_produk') }}" class="border rounded w-full py-2 px-3 text-gray-700 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+        <div class="mb-5">
+            <label class="block text-black font-bold mb-2">Nama Produk</label>
+            <input type="text" name="nama_produk" value="{{ old('nama_produk') }}" class="border rounded w-full py-2 px-3 text-black border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" required>
         </div>
 
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2">Kategori</label>
-            <select name="kategori" class="border rounded w-full py-2 px-3 text-gray-700 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+        <div class="mb-5">
+            <label class="block text-black font-bold mb-2">Kategori</label>
+            <select name="kategori" class="border rounded w-full py-2 px-3 text-black border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" required>
                 <option value="Elektronik" {{ old('kategori') == 'Elektronik' ? 'selected' : '' }}>Elektronik</option>
                 <option value="Pakaian" {{ old('kategori') == 'Pakaian' ? 'selected' : '' }}>Pakaian</option>
                 <option value="Makanan" {{ old('kategori') == 'Makanan' ? 'selected' : '' }}>Makanan</option>
             </select>
         </div>
 
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2">Harga (Rp)</label>
-            <input type="number" name="harga" value="{{ old('harga') }}" class="border rounded w-full py-2 px-3 text-gray-700 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" min="0" required>
+        <div class="mb-5">
+            <label class="block text-black font-bold mb-2">Harga (Rp)</label>
+            <input type="number" name="harga" value="{{ old('harga') }}" class="border rounded w-full py-2 px-3 text-black border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" min="0" required>
         </div>
 
         <div class="mt-6 flex space-x-2">

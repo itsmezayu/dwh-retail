@@ -3,14 +3,14 @@
 @section('title', 'Data Pelanggan')
 
 @section('content')
-<div class="mb-4">
+<div class="mt-2 mb-5">
     <a href="{{ route('pelanggan.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">＋ Tambah Pelanggan</a>
 </div>
 
 <div class="bg-white px-4 py-4 shadow rounded w-full overflow-x-auto">
     <table class="w-full text-left border-collapse datatable">
         <thead>
-            <tr class="bg-gray-800 text-white rounded">
+            <tr class="bg-slate-800 text-white rounded">
                 <th class="p-3 border-b">Kode</th>
                 <th class="p-3 border-b">Nama Pelanggan</th>
                 <th class="p-3 border-b">L / P</th>
@@ -20,7 +20,7 @@
         </thead>
         <tbody>
             @forelse($pelanggans as $pelanggan)
-                <tr class="hover:bg-gray-100 border-b">
+                <tr class="hover:bg-slate-100 border-b">
                     <td class="p-3">{{ $pelanggan->kode_pelanggan }}</td>
                     <td class="p-3">{{ $pelanggan->nama_pelanggan }}</td>
                     <td class="p-3">{{ $pelanggan->jenis_kelamin }}</td>

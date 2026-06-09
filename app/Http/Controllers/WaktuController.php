@@ -13,6 +13,11 @@ class WaktuController extends Controller
         return view('waktu.index', compact('waktus'));
     }
 
+    public function create()
+    {
+        return view('waktu.create');
+    }
+
     public function store(Request $request)
     {
         $request->validate([

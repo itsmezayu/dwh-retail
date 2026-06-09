@@ -3,51 +3,14 @@
 @section('title', 'Data Waktu')
 
 @section('content')
-
-<!-- Bagian Tambah Waktu -->
-<div class="bg-white p-6 rounded shadow mb-6 w-full md:w-1/2">
-    <h3 class="font-bold text-gray-700 mb-4 border-b pb-2">Tambah Tanggal</h3>
-    <form action="{{ route('waktu.store') }}" method="POST">
-        @csrf
-
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2">Pilih Tanggal</label>
-            <input type="date" id="tanggal" name="tanggal" value="{{ old('tanggal') }}" class="border rounded w-full py-2 px-3 text-gray-700 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" required onchange="calculateTimeDimensions(this.value)">
-        </div>
-
-        <div class="grid grid-cols-2 gap-4 mb-4">
-            <div>
-                <label class="block text-gray-700 font-bold mb-2 text-sm">Tahun</label>
-                <input type="number" id="tahun" name="tahun" value="{{ old('tahun') }}" class="border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 border-gray-300" readonly required>
-            </div>
-            <div>
-                <label class="block text-gray-700 font-bold mb-2 text-sm">Bulan (Angka)</label>
-                <input type="number" id="bulan" name="bulan" value="{{ old('bulan') }}" class="border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 border-gray-300" readonly required>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4 mb-4">
-            <div>
-                <label class="block text-gray-700 font-bold mb-2 text-sm">Nama Bulan</label>
-                <input type="text" id="bulan_nama" name="bulan_nama" value="{{ old('bulan_nama') }}" class="border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 border-gray-300" readonly required>
-            </div>
-            <div>
-                <label class="block text-gray-700 font-bold mb-2 text-sm">Kuartal</label>
-                <input type="number" id="kuartal" name="kuartal" value="{{ old('kuartal') }}" class="border rounded w-full py-2 px-3 text-gray-700 bg-gray-100 border-gray-300" readonly required>
-            </div>
-        </div>
-
-        <div class="mt-4">
-            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Simpan Waktu</button>
-        </div>
-    </form>
+<div class="mt-2 mb-5">
+    <a href="{{ route('waktu.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">＋ Tambah Tanggal</a>
 </div>
 
-<!-- Tabel Daftar Waktu -->
 <div class="bg-white px-4 py-4 shadow rounded w-full overflow-x-auto">
     <table class="w-full text-left border-collapse datatable">
         <thead>
-            <tr class="bg-gray-800 text-white rounded">
+            <tr class="bg-slate-800 text-white rounded">
                 <th class="p-3 border-b">ID</th>
                 <th class="p-3 border-b">Tanggal</th>
                 <th class="p-3 border-b">Tahun</th>
@@ -57,7 +20,7 @@
         </thead>
         <tbody>
             @forelse($waktus as $waktu)
-                <tr class="hover:bg-gray-100 border-b">
+                <tr class="hover:bg-slate-100 border-b">
                     <td class="p-3">{{ $waktu->id_waktu }}</td>
                     <td class="p-3">{{ $waktu->tanggal }}</td>
                     <td class="p-3">{{ $waktu->tahun }}</td>

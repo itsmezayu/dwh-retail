@@ -3,14 +3,14 @@
 @section('title', 'Data Produk')
 
 @section('content')
-<div class="mb-4">
+<div class="mt-2 mb-5">
     <a href="{{ route('produk.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">＋ Tambah Produk</a>
 </div>
 
 <div class="bg-white px-4 py-4 shadow rounded w-full overflow-x-auto">
     <table class="w-full text-left border-collapse datatable">
         <thead>
-            <tr class="bg-gray-800 text-white rounded">
+            <tr class="bg-slate-800 text-white rounded">
                 <th class="p-3 border-b">Kode</th>
                 <th class="p-3 border-b">Nama Produk</th>
                 <th class="p-3 border-b">Kategori</th>
@@ -20,7 +20,7 @@
         </thead>
         <tbody>
             @forelse($produks as $produk)
-                <tr class="hover:bg-gray-100 border-b">
+                <tr class="hover:bg-slate-100 border-b">
                     <td class="p-3">{{ $produk->kode_produk }}</td>
                     <td class="p-3">{{ $produk->nama_produk }}</td>
                     <td class="p-3 text-sm"><span class="bg-gray-200 px-2 py-1 rounded">{{ $produk->kategori }}</span></td>

@@ -20,6 +20,15 @@ class PenjualanController extends Controller
         return view('penjualan.index', compact('penjualans', 'produks', 'pelanggans', 'waktus'));
     }
 
+    public function create()
+    {
+        $produks = DimProduk::all();
+        $pelanggans = DimPelanggan::all();
+        $waktus = DimWaktu::orderBy('tanggal', 'desc')->get();
+
+        return view('penjualan.create', compact('produks', 'pelanggans', 'waktus'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([

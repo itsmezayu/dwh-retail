@@ -3,10 +3,10 @@
 @section('title', 'Dashboard')
 
 @section('content')
-<div class="mb-6">
-    <form action="{{ route('dashboard.index') }}" method="GET" class="flex items-center space-x-2 w-full md:w-1/3">
-        <label for="kategori" class="font-semibold text-gray-700">Filter Kategori:</label>
-        <select name="kategori" id="kategori" class="border gray-300 rounded p-2 text-gray-700 w-full" onchange="this.form.submit()">
+<div class="mb-5">
+    <form action="{{ route('dashboard.index') }}" method="GET" class="flex items-center space-x-2">
+        <label for="kategori" class="font-semibold text-black">Filter Kategori:</label>
+        <select name="kategori" id="kategori" class="border gray-300 rounded-md px-4 py-2 text-black w-full" onchange="this.form.submit()">
             <option value="Semua" {{ $kategori == 'Semua' ? 'selected' : '' }}>Semua</option>
             <option value="Elektronik" {{ $kategori == 'Elektronik' ? 'selected' : '' }}>Elektronik</option>
             <option value="Pakaian" {{ $kategori == 'Pakaian' ? 'selected' : '' }}>Pakaian</option>
@@ -15,26 +15,26 @@
     </form>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-5">
     <!-- Bar Chart -->
-    <div class="bg-white p-4 shadow rounded">
-        <h3 class="font-bold text-gray-700 mb-4 text-center">Total Penjualan per Produk</h3>
+    <div class="bg-white p-5 shadow rounded">
+        <h3 class="font-bold text-black mb-5 text-center">Total Penjualan per Produk</h3>
         <canvas id="barChart"></canvas>
     </div>
 
     <!-- Line Chart -->
-    <div class="bg-white p-4 shadow rounded">
-        <h3 class="font-bold text-gray-700 mb-4 text-center">Tren Penjualan per Bulan</h3>
+    <div class="bg-white p-5 shadow rounded">
+        <h3 class="font-bold text-black mb-5 text-center">Tren Penjualan per Bulan</h3>
         <canvas id="lineChart"></canvas>
     </div>
 </div>
 
 <!-- Table Pelanggan -->
-<div class="bg-white p-4 shadow rounded w-full">
-    <h3 class="font-bold text-gray-700 mb-4 text-center">Pelanggan dengan Belanja Tertinggi</h3>
+<div class="bg-white p-5 shadow rounded w-full">
+    <h3 class="font-bold text-black mb-5 text-center">Pelanggan dengan Belanja Tertinggi</h3>
     <table class="w-full text-left border-collapse">
         <thead>
-            <tr class="bg-gray-800 text-white rounded">
+            <tr class="bg-slate-800 text-white rounded">
                 <th class="p-3 border-b">No</th>
                 <th class="p-3 border-b">Nama Pelanggan</th>
                 <th class="p-3 border-b">Jumlah Transaksi</th>
@@ -43,7 +43,7 @@
         </thead>
         <tbody>
             @forelse($pelangganTertinggi as $index => $pl)
-                <tr class="hover:bg-gray-100 border-b">
+                <tr class="hover:bg-slate-100 border-b">
                     <td class="p-3">{{ $index + 1 }}</td>
                     <td class="p-3 font-semibold">{{ $pl->nama_pelanggan }}</td>
                     <td class="p-3">{{ $pl->jumlah_transaksi }}</td>
