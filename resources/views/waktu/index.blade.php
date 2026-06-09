@@ -45,7 +45,7 @@
 
 <!-- Tabel Daftar Waktu -->
 <div class="bg-white px-4 py-4 shadow rounded w-full overflow-x-auto">
-    <table class="w-full text-left border-collapse">
+    <table class="w-full text-left border-collapse datatable">
         <thead>
             <tr class="bg-gray-800 text-white rounded">
                 <th class="p-3 border-b">ID</th>
