@@ -10,7 +10,7 @@
         @method('PUT')
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-            <div class="mb-5">
+            <div>
                 <label class="block text-black font-bold mb-2">Pilih Produk</label>
                 <select name="id_produk" id="id_produk" class="border rounded w-full py-2 px-3 text-black border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" required onchange="updateHargaSatuan()">
                     <option value="">-- Pilih Produk --</option>
@@ -22,7 +22,7 @@
                 </select>
             </div>
 
-            <div class="mb-5">
+            <div>
                 <label class="block text-black font-bold mb-2">Pilih Pelanggan</label>
                 <select name="id_pelanggan" class="border rounded w-full py-2 px-3 text-black border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" required>
                     <option value="">-- Pilih Pelanggan --</option>
@@ -34,7 +34,7 @@
                 </select>
             </div>
 
-            <div class="mb-5">
+            <div>
                 <label class="block text-black font-bold mb-2">Pilih Tanggal</label>
                 <select name="id_waktu" class="border rounded w-full py-2 px-3 text-black border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" required>
                     <option value="">-- Pilih Tanggal --</option>
@@ -46,17 +46,17 @@
                 </select>
             </div>
 
-            <div class="mb-5">
+            <div>
                 <label class="block text-black font-bold mb-2">Jumlah</label>
                 <input type="number" name="jumlah" id="jumlah" value="{{ old('jumlah', $penjualan->jumlah) }}" class="border rounded w-full py-2 px-3 text-black border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" min="1" required oninput="calculateTotal()">
             </div>
 
-            <div class="mb-5">
+            <div>
                 <label class="block text-black font-bold mb-2">Harga Satuan (Otomatis)</label>
                 <input type="number" id="harga_satuan" value="0" class="border rounded w-full py-2 px-3 text-black bg-gray-100 border-gray-300" readonly>
             </div>
 
-            <div class="mb-5">
+            <div>
                 <label class="block text-black font-bold mb-2">Total Harga (Otomatis)</label>
                 <input type="number" id="total_harga" value="0" class="border rounded w-full py-2 px-3 text-black bg-gray-100 border-gray-300 font-bold text-green-700" readonly>
             </div>
